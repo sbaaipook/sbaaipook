@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
+import cv from '../assets/profile-image.png'
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
@@ -25,7 +26,7 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
             <div className="flex items-center justify-between mx-auto w-5/6">
                 <h4 className="font-playfair text-3xl font-bold">SP.</h4>
                 {isAboveSmallScreens ? (
-                    <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
+                    <div className="flex justify-between items-center gap-16 font-opensans text-sm font-semibold">
                         <Link page='Home'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
@@ -39,31 +40,51 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
 
+<a
+                                className="bg-gradient-rainblue text-deep-blue block rounded-sm py-3 px-7 font-semibold
+              hover:bg-blue hover:text-white transition duration-500"
+                                onClick={() => setSelectedPage("contact")}
+                                href={cv}
+                                download={true}
+                            >
+                                Download Cv
+                            </a>
+
                     </div>
                 ) : (<button className="rounded-full bg-blue"
-                onClick={()=> setIsMenuToggled(!isMenuToggled)}> <img src="./assets/menu-icon.svg" alt="menu-icon" /></button>)}
+                    onClick={() => setIsMenuToggled(!isMenuToggled)}> <img src="./assets/menu-icon.svg" alt="menu-icon" /></button>)}
 
                 {!isAboveSmallScreens && isMenuToggled && (
                     <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
                         <div className="flex justify-end  p-12">
-                            <button onClick={()=>setIsMenuToggled(!isMenuToggled)}>
+                            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
                                 <img src="./assets/close-icon.svg" alt="close-icon" />
                             </button>
 
                         </div>
-                        <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
-                        <Link page='Home'
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link page='Skills'
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link page='Projects'
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link page='Contact'
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
+                        <div className="flex flex-col items-center gap-10  text-2xl text-deep-blue">
+                            <Link page='Home'
+                                selectedPage={selectedPage}
+                                setSelectedPage={setSelectedPage} />
+                            <Link page='Skills'
+                                selectedPage={selectedPage}
+                                setSelectedPage={setSelectedPage} />
+                            <Link page='Projects'
+                                selectedPage={selectedPage}
+                                setSelectedPage={setSelectedPage} />
+                            <Link page='Contact'
+                                selectedPage={selectedPage}
+                                setSelectedPage={setSelectedPage} />
+
+                            <a
+                                className="bg-gradient-rainblue text-deep-blue block rounded-sm py-3 px-7 font-semibold
+              hover:bg-blue hover:text-white transition duration-500"
+                                onClick={() => setSelectedPage("contact")}
+                                href={cv}
+                                download={true}
+                            >
+                                Download Cv
+                            </a>
                         </div>
                     </div>
                 )}
