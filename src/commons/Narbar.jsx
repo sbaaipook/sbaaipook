@@ -24,7 +24,7 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
     return (
         <nav className={`${navBarBackground} z-40 w-full fixed top-0 py-6`}>
             <div className="flex items-center justify-between mx-auto w-5/6">
-                <h4 className="font-playfair text-3xl font-bold">SP.</h4>
+                <h4 className="font-playfair text-3xl font-bold">SA.</h4>
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between items-center gap-16 font-opensans text-sm font-semibold">
                         <Link page='Home'
