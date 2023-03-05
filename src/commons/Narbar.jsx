@@ -40,7 +40,7 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
                             setSelectedPage={setSelectedPage} />
 
                     </div>
-                ) : (<button className="rounded-full"
+                ) : (<button className="rounded-full bg-blue"
                 onClick={()=> setIsMenuToggled(!isMenuToggled)}> <img src="./assets/menu-icon.svg" alt="menu-icon" /></button>)}
 
                 {!isAboveSmallScreens && isMenuToggled && (
