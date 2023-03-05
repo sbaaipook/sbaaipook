@@ -6,7 +6,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
     return (
         <AnchorLink
-            className={`${selectedPage === lowerCasePage ? "text-yellow" : ""} hover:text-yellow transition duration-500`}
+            className={`${selectedPage === lowerCasePage ? "text-red" : ""} hover:text-red transition duration-500`}
             href={`#${lowerCasePage}`}
             onClick={() => setSelectedPage(lowerCasePage)}>
             {page}
@@ -32,12 +32,13 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
                         <Link page='Skills'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
-                        <Link page='Porjects'
+                        <Link page='Projects'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
                         <Link page='Contact'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
+
                     </div>
                 ) : (<button className="rounded-full"
                 onClick={()=> setIsMenuToggled(!isMenuToggled)}> <img src="./assets/menu-icon.svg" alt="menu-icon" /></button>)}
@@ -57,7 +58,7 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
                         <Link page='Skills'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
-                        <Link page='Porjects'
+                        <Link page='Projects'
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
                         <Link page='Contact'

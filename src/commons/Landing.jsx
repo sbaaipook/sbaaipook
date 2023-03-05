@@ -44,7 +44,7 @@ const Landing = ({ setSelectedPage }) => {
                             before:-top-[70px] before:z-[-1]">Abdo</span>
                     </p>
                     <p className="mt-10 mb-7 text-sm text-center md:text-start">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, vel inventore tempore voluptate fugiat, ad quasi at voluptates, repellendus quisquam impedit provident? Sed ea quibusdam, ipsum quae tenetur reiciendis eligendi.
+                        Hello world! this is Abdessadek Sbaai from Morocco, I'm a Full Stack Developper with two year experience.
                     </p>
                 </motion.div>
 
@@ -72,25 +72,26 @@ const Landing = ({ setSelectedPage }) => {
                         onClick={() => setSelectedPage("contact")}
                         href="#contact"
                     >
-                        <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
+                        <div className="bg-white hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
                             Let's talk.
                         </div>
                     </AnchorLink>
                 </motion.div>
 
                 <motion.div
-          className="flex mt-5 justify-center md:justify-start"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
-          <SocialMediaIcons />
-        </motion.div>
+                    className="flex mt-5 justify-center md:justify-start"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <SocialMediaIcons />
+                </motion.div>
+                
             </div>
 
         </section>
