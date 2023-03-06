@@ -18,11 +18,12 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 
 const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
-    const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
-    const navBarBackground = isTopOfPage ? '' : "bg-blue"
+    const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+    const navBarBackground = isTopOfPage ? '' : "bg-blue";
+    const navBarColor = isTopOfPage ? '': "text-white";
 
     return (
-        <nav className={`${navBarBackground} z-40 w-full fixed top-0 py-6`}>
+        <nav className={`${navBarBackground} ${navBarColor} z-40 w-full fixed top-0 py-6`}>
             <div className="flex items-center justify-between mx-auto w-5/6">
                 <h4 className="font-playfair text-3xl font-bold">SA.</h4>
                 {isAboveSmallScreens ? (
@@ -40,15 +41,14 @@ const Narbar = ({ setSelectedPage, selectedPage, isTopOfPage }) => {
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
 
-<a
-                                className="bg-gradient-rainblue text-deep-blue block rounded-sm py-3 px-7 font-semibold
-              hover:bg-blue hover:text-white transition duration-500"
-                                onClick={() => setSelectedPage("contact")}
-                                href={cv}
-                                download={true}
-                            >
-                                Download Cv
-                            </a>
+                        <a
+                            className="bg-gradient-rainblue text-deep-blue block rounded-sm py-3 px-7 font-semibold
+                                        hover:bg-blue hover:text-white transition duration-500"
+                            onClick={() => setSelectedPage("contact")}
+                            href={cv}
+                            download={true}>
+                            Download Cv
+                        </a>
 
                     </div>
                 ) : (<button className="rounded-full bg-blue"
